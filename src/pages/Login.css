@@ -1,0 +1,72 @@
+.login {
+    position: absolute;
+    width: 1440px;
+    height: 900px;
+    left: 0px;
+    top: 0px;
+    background: #FFF2C8;
+}
+
+.ntu {
+    position: absolute;
+    width: 199px;
+    height: 71px;
+    left: 116px;
+    top: 53px;
+}
+
+.NTULearn {
+    position: absolute;
+    width: 542px;
+    height: 122px;
+    left: 116px;
+    top: 208px;
+
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 96px;
+    line-height: 115px;
+
+    color: #000000;
+}
+
+.forum {
+    position: absolute;
+    width: 507px;
+    height: 136px;
+    left: 118px;
+    top: 298px;
+
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 130px;
+    line-height: 156px;
+
+    color: #000000;
+}
+
+.student {
+    position: absolute;
+    width: 797px;
+    height: 420.85px;
+    left: 602px;
+    top: 330px;
+}
+
+.description {
+    position: absolute;
+    width: 451px;
+    height: 108px;
+    left: 116px;
+    top: 520px;
+
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: #000000;
+}
