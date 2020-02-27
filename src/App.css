@@ -3,4 +3,9 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  background: #FFF2C8;
+}
+
+p, h1, h2, h3, h4, h5 {
+  color: #FF7A00;
 }
