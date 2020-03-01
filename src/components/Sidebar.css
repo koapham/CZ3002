@@ -1,0 +1,46 @@
+.sidebar-item-holder {
+    width: 100%;
+    height: 3em;
+    position: relative;
+    color: #FF7A00;
+    border-radius: 54px;
+}
+
+.sidebar-item-holder a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.sidebar-item-holder a.active {
+    border-radius: 50px;
+    background: #FF7A00;
+}
+
+.sidebar-item-holder p {
+    color: #FF7A00;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 1em 0 0 0;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+.sidebar-item-holder a.active p {
+    color: #FFFFFF;
+}
+
+.sidebar-item-holder svg {
+    fill: #FF7A00;
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    height: 2em;
+    width: 2em;
+}
+
+.sidebar-item-holder a.active svg {
+    fill: #FFFFFF;
+}
