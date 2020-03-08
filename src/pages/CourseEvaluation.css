@@ -1,0 +1,138 @@
+.center {
+    width: 100%;
+    margin: 0 auto;
+    text-align:center
+}
+
+.home-div {
+    overflow: hidden;
+}
+
+#welcome-msg {
+    margin-top: 5em;
+    font-weight: bold;
+}
+
+#welcome-msg.search {
+    display: none;
+}
+
+#title {
+    margin-top: 1em;
+    font-weight: normal;
+}
+
+#title.search {
+    display: none;
+}
+
+#course-search {
+    width: 100%;
+    border: 1px lightgrey solid;
+    border-radius: 25px;
+    padding: 1.2em 1em;
+    color: #FF7A00;
+}
+
+.input-holder {
+    width: 60%;
+    position: relative;
+    margin-top: 10em;
+
+    transition-property: all;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-out;
+}
+
+.input-holder.search {
+    margin-top: 3em;
+    animation: slideUp 0.7s;
+}
+
+.search-icon {
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    left: 1em;
+    top: 0.5em;
+    fill: #FF7A00;
+}
+
+.home-placeholder {
+    margin-top: 5em;
+}
+
+.home-placeholder.search {
+    width: 15%;
+    height: 15%;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    animation: fadein 2s;
+}
+
+.module-list-holder {
+    display: none;
+    width: 70%;
+}
+
+.module-list-holder.search {
+    display: block;
+    animation: fadein 1s;
+}
+
+.sidebar {
+    display: none;
+    width: 20%;
+    float: left;
+}
+
+.sidebar.search {
+    display: block;
+    animation: fadein 1s;
+}
+
+@media only screen and (max-width: 600px) {
+    .input-holder {
+        width: 90%;
+        margin-top: 3em;
+    }
+
+    .input-holder.search {
+        margin-top: 8em;
+        animation: slideUpMobile 0.7s;
+    }
+
+    #course-search {
+        width: 90%;
+    }
+
+    .home-placeholder {
+        display: none;
+    }
+
+    .home-placeholder.search {
+        display: none;
+    }
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@keyframes slideUp {
+    from { margin-top: 21em; }
+    to   { margin-top: 3em; }
+}
+
+@keyframes slideUpMobile {
+    from { margin-top: 14em; }
+    to   { margin-top: 8em; }
+}

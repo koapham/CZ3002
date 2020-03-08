@@ -5,6 +5,7 @@ import './App.css';
 //pages
 import Home from './pages/Home';
 import Login from './pages/Login';
+import CourseEvaluation from './pages/CourseEvaluation';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/login" component={Login}/>
+                  <Route exact path="/course" component={CourseEvaluation}/>
                 </Switch>
               </Router>
           </div>

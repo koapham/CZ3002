@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "./Sidebar.css";
 import { ReactComponent as CourseInfoIcon} from "../pages/assets/folder.svg";
 import { ReactComponent as CourseEvalIcon} from "../pages/assets/edit.svg";
@@ -31,10 +32,14 @@ class Sidebar extends Component {
         return (
             <div className={this.props.className}>
                 <div className={"sidebar-item-holder"}>
-                    <a id="course-info" className={this.state.courseInfo} href={"#"} onClick={this.toggleActive}>
+                    {/*<a id="course-info" className={this.state.courseInfo} href={"#"} onClick={this.toggleActive}>*/}
+                    {/*    <CourseInfoIcon />*/}
+                    {/*    <p>Course Information</p>*/}
+                    {/*</a>*/}
+                    <Link to="/course">
                         <CourseInfoIcon />
                         <p>Course Information</p>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className={"sidebar-item-holder"}>
