@@ -70,3 +70,32 @@
 
     color: #000000;
 }
+
+.box {
+    position: absolute;
+    width: 347px;
+    height: 56px;
+    left: 118px;
+    top: 698px;
+}
+
+.studentLogin {
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    left: 118px;
+    top: 698px;
+}
+
+.adminLogin {
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    left: 160px;
+    top: 698px;
+
+}
+
+span {
+    font-family: Gotham;
+}
