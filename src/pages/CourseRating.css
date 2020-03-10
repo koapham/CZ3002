@@ -1,0 +1,64 @@
+.courseTitle {
+    position: relative;
+    top: 1.5em;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.courseContent {
+    position: relative;
+    top: 5em;
+    font-size: large;
+}
+
+.courseCoord {
+    position: relative;
+    top: 2em;
+}
+
+.courseCoordinator {
+    display: inline-block;
+    font-weight: bold;
+    font-size: large
+
+}
+
+.courseCoordinatorContent {
+    display: inline-block;
+    margin-left: 1em;
+    font-size: large;
+}
+
+.courseRating {
+    position: relative;
+    top: -2.3em;
+}
+
+.courseAverageRating {
+    display: inline-block;
+    float: right;
+    margin-right: 0.5em;
+    font-size: xx-large;
+    color: #FF7A00;
+}
+
+.courseAverageRatingSymbol {
+    display: inline-block;
+    float: right;
+    margin-right: 10em;
+    width: 2em;
+    height: 2em;
+}
+
+.lineDivision {
+    display: block;
+    margin-left: 20%;
+    margin-top: 4.5em;
+    margin-right: 8%;
+}
+
+.courseReviews {
+    margin-top: 0.5em;
+    margin-left: 20%;
+}
+
