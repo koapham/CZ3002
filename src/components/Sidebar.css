@@ -12,7 +12,12 @@
     text-decoration: none;
 }
 
-.sidebar-item-holder a.active {
+/*.sidebar-item-holder a.active {*/
+/*    border-radius: 50px;*/
+/*    background: #FF7A00;*/
+/*}*/
+
+.sidebar-item-holder-active {
     border-radius: 50px;
     background: #FF7A00;
 }
@@ -28,7 +33,11 @@
     vertical-align: middle;
 }
 
-.sidebar-item-holder a.active p {
+/*.sidebar-item-holder a.active p {*/
+/*    color: #FFFFFF;*/
+/*}*/
+
+.sidebar-item-holder-active p {
     color: #FFFFFF;
 }
 
@@ -41,6 +50,10 @@
     width: 2em;
 }
 
-.sidebar-item-holder a.active svg {
+/*.sidebar-item-holder a.active svg {*/
+/*    fill: #FFFFFF;*/
+/*}*/
+
+.sidebar-item-holder-active svg {
     fill: #FFFFFF;
 }

@@ -72,6 +72,14 @@
     animation: fadein 2s;
 }
 
+.home-placeholder.rating {
+    width: 15%;
+    height: 15%;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    animation: fadein 2s;
+}
 .module-list-holder {
     display: none;
     width: 70%;
@@ -91,6 +99,12 @@
 .sidebar.search {
     display: block;
     animation: fadein 1s;
+}
+
+.sidebar.rating {
+    display: block;
+    animation: fadein 1s;
+    margin-top: 5%;
 }
 
 @media only screen and (max-width: 600px) {

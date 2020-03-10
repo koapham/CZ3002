@@ -7,6 +7,8 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 //pages
 import Home from './pages/Home';
 import Login from './pages/Login';
+import CourseInformation from "./pages/CourseInformation";
+import CourseRating from "./pages/CourseRating";
 
 const theme = createMuiTheme({
   palette: {
@@ -30,6 +32,8 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Login}/>
                   <Route exact path="/home" component={Home}/>
+                  <Route exact path="/courseInformation" component={CourseInformation} />
+                  <Route exact path="/courseRating" component={CourseRating} />
                 </Switch>
               </Router>
           </div>

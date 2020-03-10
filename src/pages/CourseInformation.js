@@ -6,14 +6,14 @@ import "./Home.css";
 import { ReactComponent as SearchIcon} from "./assets/search.svg";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
 
-class Home extends Component {
+class CourseInformation extends Component {
     constructor(props) {
         super(props);
 
         this.toggleSearch = this.toggleSearch.bind(this);
         this.exitSearch = this.exitSearch.bind(this);
 
-        this.state = {searchClass: ""};
+        this.state = {searchClass: " search"};
     }
 
     toggleSearch() {
@@ -28,8 +28,6 @@ class Home extends Component {
         return (
             <div className={"home-div"}>
                 <HomeIcon />
-                <p id="welcome-msg" className={ "center" + this.state.searchClass }>Hey USERNAME!</p>
-                <h1 id="title" className={ "center" + this.state.searchClass }>Welcome to Showtime</h1>
                 <div className={ "input-holder center" + this.state.searchClass }>
                     <SearchIcon className="search-icon"/>
                     <input id="course-search" className={"center"} placeholder="Type the code or title of a course"
@@ -43,4 +41,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default CourseInformation;
