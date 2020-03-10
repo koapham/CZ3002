@@ -1,0 +1,15 @@
+.mysidebar {
+    display: block;
+    top: 180px;
+    left: 37px;
+    position: absolute;
+    width: 20%;
+}
+
+.myhomeplaceholder {
+    position: absolute;
+    width: 271px;
+    height: 368.94px;
+    left: 46px;
+    top: 330px;
+}

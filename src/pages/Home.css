@@ -60,10 +60,26 @@
 }
 
 .home-placeholder {
-    margin-top: 5em;
+    position: absolute;
+    width: 271px;
+    height: 368.94px;
+    top: 372px;
 }
 
 .home-placeholder.search {
+    /* width: 50%;
+    height: 50%;
+    position: fixed;
+    bottom: 1em;
+    left: 78px; */
+    width: 271px;
+    height: 368.94px;
+    left: 46px;
+    top: 330px;
+    animation: fadein 2s;
+}
+
+.home-placeholder.rating {
     width: 15%;
     height: 15%;
     position: fixed;
@@ -71,7 +87,6 @@
     left: 1em;
     animation: fadein 2s;
 }
-
 .module-list-holder {
     display: none;
     width: 70%;
@@ -91,6 +106,15 @@
 .sidebar.search {
     display: block;
     animation: fadein 1s;
+    top: 180px;
+    left: 37px;
+    position: absolute;
+}
+
+.sidebar.rating {
+    display: block;
+    animation: fadein 1s;
+    margin-top: 5%;
 }
 
 @media only screen and (max-width: 600px) {

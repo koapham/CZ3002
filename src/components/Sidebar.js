@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./Sidebar.css";
 import { ReactComponent as CourseInfoIcon} from "../pages/assets/folder.svg";
-import { ReactComponent as CourseEvalIcon} from "../pages/assets/edit.svg";
+import { ReactComponent as CourseForumIcon} from "../pages/assets/edit.svg";
 
 class Sidebar extends Component {
     constructor(props) {
@@ -9,21 +9,21 @@ class Sidebar extends Component {
 
         this.toggleActive = this.toggleActive.bind(this);
 
-        this.state = {courseInfo: " active", courseEval: ""};
+        this.state = {courseInfo: " active", courseForum: ""};
     }
 
     toggleActive(e) {
         let selected = e.currentTarget.id;
         let courseInfo = '';
-        let courseEval = '';
+        let courseForum = '';
         e.preventDefault();
 
         if(selected === 'course-info')
             courseInfo = ' active';
-        else if(selected === 'course-eval')
-            courseEval = ' active';
+        else if(selected === 'course-forum')
+        courseForum = ' active';
 
-        this.setState( {courseInfo: courseInfo, courseEval: courseEval} );
+        this.setState( {courseInfo: courseInfo, courseForum: courseForum} );
     }
 
 
@@ -38,9 +38,9 @@ class Sidebar extends Component {
                 </div>
 
                 <div className={"sidebar-item-holder"}>
-                    <a id="course-eval" className={this.state.courseEval} href={"#"} onClick={this.toggleActive}>
-                        <CourseEvalIcon />
-                        <p>Course Evaluation</p>
+                    <a id="course-forum" className={this.state.courseForum} href={"#"} onClick={this.toggleActive}>
+                        <CourseForumIcon />
+                        <p>Course Forum</p>
                     </a>
                 </div>
             </div>
