@@ -31,46 +31,6 @@
     color: #000000;
 }
 
-.forum {
-    position: absolute;
-    width: 507px;
-    height: 136px;
-    left: 118px;
-    top: 298px;
-
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 130px;
-    line-height: 156px;
-
-    color: #000000;
-}
-
-.student {
-    position: absolute;
-    width: 797px;
-    height: 420.85px;
-    left: 602px;
-    top: 330px;
-}
-
-.description {
-    position: absolute;
-    width: 451px;
-    height: 108px;
-    left: 116px;
-    top: 520px;
-
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 36px;
-
-    color: #000000;
-}
-
 .box {
     position: absolute;
     width: 347px;
