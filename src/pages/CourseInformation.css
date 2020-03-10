@@ -1,0 +1,15 @@
+.course-info .sidebar {
+    animation: none;
+}
+
+.course-info .home-placeholder {
+    animation: none;
+}
+
+.course-info .input-holder.search {
+    animation: none;
+}
+
+.course-info .module-list-holder.search {
+    animation: none;
+}

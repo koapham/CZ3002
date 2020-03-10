@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import HomeIcon from '../components/HomeIcon';
 import ModuleList from '../components/ModuleList';
 import Sidebar from '../components/Sidebar';
-import "./Home.css";
+import "./CourseInformation.css";
 import { ReactComponent as SearchIcon} from "./assets/search.svg";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
+import SearchBar from "../components/SearchBar";
 
 class CourseInformation extends Component {
     constructor(props) {
@@ -26,13 +27,9 @@ class CourseInformation extends Component {
 
     render() {
         return (
-            <div className={"home-div"}>
+            <div className={"home-div course-info"}>
                 <HomeIcon />
-                <div className={ "input-holder center" + this.state.searchClass }>
-                    <SearchIcon className="search-icon"/>
-                    <input id="course-search" className={"center"} placeholder="Type the code or title of a course"
-                           onChange={this.toggleSearch}/>
-                </div>
+                <SearchBar className="search" toggleSearch={this.toggleSearch}/>
                 <Sidebar className={ "sidebar" + this.state.searchClass }/>
                 <ModuleList className={ "module-list-holder" + this.state.searchClass }/>
                 <HomePlaceholder className={ "home-placeholder center" + this.state.searchClass }  />

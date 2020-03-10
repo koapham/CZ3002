@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import "./CourseForum.css";
 import HomeIcon from '../components/HomeIcon';
 import SearchBar from '../components/SearchBar';
 import Sidebar from '../components/Sidebar';
+import "./Home.css";
+import "./CourseForum.css";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
 
 class CourseForum extends Component {
@@ -20,11 +21,11 @@ class CourseForum extends Component {
 
     render() {
         return (
-            <div>
+            <div className={"home-div course-forum"}>
                 <HomeIcon />
-                <SearchBar/>
-                <Sidebar className = "mysidebar"/>
-                <HomePlaceholder className = "myhomeplaceholder"/>
+                <SearchBar className="search" />
+                <Sidebar className = {"sidebar search"}/>
+                <HomePlaceholder className = "home-placeholder search"/>
             </div>
         );
     }

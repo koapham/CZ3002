@@ -1,15 +1,15 @@
-.mysidebar {
-    display: block;
-    top: 180px;
-    left: 37px;
-    position: absolute;
-    width: 20%;
+.course-forum .sidebar {
+    animation: none;
 }
 
-.myhomeplaceholder {
-    position: absolute;
-    width: 271px;
-    height: 368.94px;
-    left: 46px;
-    top: 330px;
+.course-forum .home-placeholder {
+    animation: none;
+}
+
+.course-forum .input-holder.search {
+    animation: none;
+}
+
+.course-forum .module-list-holder.search {
+    animation: none;
 }

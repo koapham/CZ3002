@@ -6,7 +6,7 @@ class HomeIcon extends Component {
     render() {
         return (
             <div>
-                <a id="home-icon-holder" href="/">
+                <a id="home-icon-holder" href="/home">
                     <HomeIconSvg className="home-icon"/>
                     <p>Home</p>
                 </a>
