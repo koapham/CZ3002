@@ -18,7 +18,7 @@ class Login extends Component {
                     exchange materials</p>
                 <div>
                     <Button className="studentLogin" variant="contained" color="primary" component={Link} to="/home"> <span>Student</span> </Button>
-                    <Button className="adminLogin" variant="contained" color="secondary" component={Link} to="/home"> <span>Admin</span> </Button>
+                    {/* <Button className="adminLogin" variant="contained" color="secondary" component={Link} to="/home"> <span>Admin</span> </Button> */}
                 </div>
             </div>
         );

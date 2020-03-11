@@ -14,9 +14,27 @@
     animation: none;
 }
 
+.ask-question {
+    width: 160px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #FFC400;
+    color: white;
+    display: inline-block;
+    left: 75em;
+    margin-top: 2em;
+    position: absolute;
+}
+
+.ask-question:hover {
+    background-color: #E8B305;
+    cursor: pointer;
+}
+
 .forum {
     width: calc(95% - 260px);
-    margin: 2% 1% auto auto !important;
+    margin: 7% 1% auto auto !important;
 }
 
 .student {
@@ -53,13 +71,15 @@
     font-family: Gotham;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
     color: #616161;
     text-align: center;
-    padding-top: 1.3em;
+    padding-top: 0.5em;
     display: inline-block;
     position: absolute;
+}
+
+.big {
+    font-size: 18px;
 }
 
 .vote {
@@ -75,18 +95,49 @@
 }
 
 .question {
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 26px;
     color: #000000;
-    left: 14em;
-    padding-top: 0.8em;
     position: absolute;
+    top: 0.8em;
+    left: 14em;
+}
+
+.question:hover{
+    color: #616161;
+    cursor: pointer;
 }
 
 .br { 
     display: block; 
     margin-bottom: 0.7em;
+}
+
+.info {
+    color: #848383;
+    position: absolute;
+    top: 3em;
+    right: 2em;
+}
+
+.owner {
+    color: #0943D7;
+}
+
+.owner:hover{
+    color: #5786FF;
+    cursor: pointer;
+}
+
+.top-question {
+    position: absolute;
+    left: 345px;
+    top: 145px;
+
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+
+    color: #FF7A00;
+
 }
