@@ -18,7 +18,7 @@ class SearchBar extends Component {
     }
     render() {
         return (
-            <div className={ "input-holder center " + this.props.className + " " + this.state.searchClass}>
+            <div className={ "input-holder " + this.props.className + " " + this.state.searchClass}>
                     <SearchIcon className={"search-icon"}/>
                     <input id="course-search" className={"center"} placeholder="Type the code or title of a course"
                            onChange={this.toggleSearch}/>

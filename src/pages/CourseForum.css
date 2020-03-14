@@ -15,16 +15,16 @@
 }
 
 .ask-question {
-    width: 160px;
+    width: 10em;
     line-height: 50px;
     text-align: center;
     border-radius: 5px;
     background-color: #FFC400;
     color: white;
     display: inline-block;
-    left: 75em;
-    margin-top: 2em;
-    position: absolute;
+    margin-top: 2%;
+    margin-right: 1%;
+    float: right;
 }
 
 .ask-question:hover {
@@ -35,14 +35,6 @@
 .forum {
     width: calc(95% - 260px);
     margin: 7% 1% auto auto !important;
-}
-
-.student {
-    position: absolute;
-    width: 797px;
-    height: 420.85px;
-    left: 602px;
-    top: 330px;
 }
 
 .description {
@@ -62,7 +54,7 @@
 }
 
 .list {
-    height: 10vh;
+    height: 5em;
     margin: 0 auto;
     padding: 0;
 }
