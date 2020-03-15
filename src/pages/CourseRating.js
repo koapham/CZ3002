@@ -7,6 +7,9 @@ import "./CourseRating.css";
 import { ReactComponent as SearchIcon} from "./assets/search.svg";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
 import CourseReviewCard from "../components/CourseReviewCard";
+import Popup from "reactjs-popup";
+import Button from '@material-ui/core/Button';
+
 
 var data = {
     "reviews": [
@@ -76,7 +79,14 @@ class CourseRating extends Component {
                     <HomePlaceholder className="courseAverageRatingSymbol" />
                     <div className="courseAverageRating">9.2</div>
                 </div>
-                <div className="courseReviewAdd">Add</div>
+                <Popup trigger=
+                           {
+                               <div className="courseReviewAdd">Add</div>
+                           } modal closeOnDocumentClick>
+                    <div>
+
+                    </div>
+                </Popup>
                 <hr className="lineDivision" />
                 <div className="courseReviews">
                     {data.reviews.map(review =>

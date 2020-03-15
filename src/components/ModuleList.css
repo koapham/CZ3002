@@ -19,6 +19,11 @@
     text-decoration: none;
 }
 
+.courseName {
+    font-size: large;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 600px) {
     .module-list-holder {
         margin: 2em 2em auto auto;

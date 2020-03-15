@@ -1,6 +1,7 @@
 .courseTitle {
     position: relative;
     top: 1.5em;
+    left: 4em;
     font-size: x-large;
     font-weight: bold;
 }
@@ -8,12 +9,14 @@
 .courseContent {
     position: relative;
     top: 5em;
+    left: 5.5em;
     font-size: large;
 }
 
 .courseCoord {
     position: relative;
     top: 2em;
+    left: 6.1em;
 }
 
 .courseCoordinator {
@@ -62,3 +65,13 @@
     margin-left: 20%;
 }
 
+.courseReviewAdd {
+    position: relative;
+    float: right;
+    background-color: #FF7A00;
+    padding: 4px 12px;
+    margin-top: 2.5em;
+    margin-right: -3em;
+    border-radius: 10px;
+    cursor: pointer;
+}
