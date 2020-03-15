@@ -75,3 +75,34 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.courseReviewAddSection {
+    background: #FFF2C8;
+    padding: 15px;
+}
+
+.courseReviewAddTitle {
+
+}
+
+.courseReviewAddTitleContent {
+    width: 50%;
+}
+
+.courseReviewAddRating {
+    margin-top: 15px;
+}
+
+.courseReviewAddRatingContent {
+    width: 50px;
+}
+
+.courseReviewAddDescription {
+    margin-top: 15px;
+}
+
+.courseReviewAddDescriptionContent {
+    width: 50%;
+    resize: both;
+    overflow: auto;
+}

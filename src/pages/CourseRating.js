@@ -81,10 +81,15 @@ class CourseRating extends Component {
                 </div>
                 <Popup trigger=
                            {
-                               <div className="courseReviewAdd">Add</div>
+                               <div className="courseReviewAdd">Add Rating</div>
                            } modal closeOnDocumentClick>
-                    <div>
-
+                    <div className="courseReviewAddSection">
+                        <div className="courseReviewAddTitle">Title</div>
+                        <input type="text" className="courseReviewAddTitleContent" />
+                        <div className="courseReviewAddRating">Rating</div>
+                        <input type="number" step="any" className="courseReviewAddRatingContent" />
+                        <div type="text" className="courseReviewAddDescription">Description</div>
+                        <input type="text" className="courseReviewAddDescriptionContent" />
                     </div>
                 </Popup>
                 <hr className="lineDivision" />
