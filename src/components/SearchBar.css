@@ -12,6 +12,9 @@
 
 .input-holder.search {
     margin-top: 3em;
+}
+
+.home-div .input-holder.search {
     animation: slideUp 0.7s;
 }
 
@@ -41,6 +44,9 @@
 
     .input-holder.search {
         margin-top: 5em;
+    }
+
+    .home-div .input-holder.search {
         animation: slideUpMobile 0.7s;
     }
 

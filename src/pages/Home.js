@@ -29,7 +29,7 @@ class Home extends Component {
         return (
             <div className={"home-div"}>
                 <HomeIcon />
-                <p id="welcome-msg" className={ "center" + this.state.searchClass }>Hey USERNAME!</p>
+                <p id="welcome-msg" className={ "center" + this.state.searchClass }>Hey Jia Chin!</p>
                 <h1 id="title" className={ "center" + this.state.searchClass }>Welcome to Showtime</h1>
                 <SearchBar className="" toggleSearch={this.toggleSearch}/>
                 <Sidebar className={ "sidebar" + this.state.searchClass }/>

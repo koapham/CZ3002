@@ -8,6 +8,7 @@ import { ReactComponent as SearchIcon} from "./assets/search.svg";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
 import CourseReviewCard from "../components/CourseReviewCard";
 import Popup from "reactjs-popup";
+import queryString from 'query-string';
 import Button from '@material-ui/core/Button';
 
 
@@ -45,35 +46,53 @@ class CourseRating extends Component {
         super(props);
 
         this.toggleSearch = this.toggleSearch.bind(this);
-        this.exitSearch = this.exitSearch.bind(this);
 
-        this.state = {searchClass: " search"};
+        this.state = {courseTitle: "-", courseCoordinator: "-"};
+
+        let course = queryString.parse(this.props.location.search).course;
+        let URL = 'https://sunny-inn-269207.appspot.com/read/';
+        let endpoint, id;
+
+        if(course === 'CZ3002')
+            id = '/7tTsljHJLz2pLi72letq';
+        else if(course === 'CZ3003')
+            id='/k3tsiInXswPVBkmpadVF';
+        else if(course === 'CZ3004')
+            id = '/WotB0wHrIAaGwNXqefOF';
+
+        endpoint = URL + course + id;
+
+        fetch(endpoint)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                this.setState({
+                    courseTitle: json.courseName,
+                    courseCoordinator: json.courseCoord
+                });
+            });
     }
 
     toggleSearch() {
         this.setState( { searchClass : " rating" } );
     }
 
-    exitSearch() {
-        this.setState( { searchClass : "" } );
-    }
-
     render() {
         return (
-            <div>
+            <div className={"course-rating"}>
                 <HomeIcon />
-                <div className={ "input-holder center" + this.state.searchClass }>
+                <div className={ "input-holder center" }>
                     <SearchIcon className="search-icon"/>
                     <input id="course-search" className={"center"} placeholder="Type the code or title of a course"
                            onChange={this.toggleSearch}/>
                 </div>
-                <Sidebar className={ "sidebar" + this.state.searchClass }/>
-                <HomePlaceholder className={ "home-placeholder center" + this.state.searchClass }  />
-                <div className="courseTitle">CZ3002 - Advance Software Engineering</div>
+                <Sidebar className={ "sidebar"}/>
+                <HomePlaceholder className={ "home-placeholder center" }  />
+                <div className="courseTitle">{this.state.courseTitle}</div>
                 <a href="#" className="courseContent">Content</a>
                 <div className="courseCoord">
                     <div className="courseCoordinator">Course Coordinator</div>
-                    <div className="courseCoordinatorContent">Dr Shen Zhiqi</div>
+                    <div className="courseCoordinatorContent">Dr {this.state.courseCoordinator}</div>
                 </div>
                 <div className="courseRating">
                     <HomePlaceholder className="courseAverageRatingSymbol" />

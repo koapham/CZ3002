@@ -6,15 +6,15 @@ import "./ModuleList.css";
 var data = {
     reviews: [
         {
-            "courseName": "cz3002",
+            "courseName": "CZ3002",
             "url": "/courseRating"
         },
         {
-            "courseName": "cz3003",
+            "courseName": "CZ3003",
             "url": "/courseRating"
         },
         {
-            "courseName": "cz3004",
+            "courseName": "CZ3004",
             "url": "/courseRating"
         }
     ]
@@ -52,7 +52,7 @@ class ModuleList extends Component {
                     {/*)}*/}
                     {data.reviews.map(course =>
                         <li className="courseName">
-                            <NavLink to={course.url}>{course.courseName}</NavLink>
+                            <NavLink to={course.url + '?course=' + course.courseName}>{course.courseName}</NavLink>
                         </li>
                     )}
                 </ul>

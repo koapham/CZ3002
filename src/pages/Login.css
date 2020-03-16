@@ -9,7 +9,6 @@
     opacity: 90%;
 }
 
-
 .Login{
   background:#FFF2c8
 }
@@ -22,11 +21,6 @@
     margin: 0 auto;
     font-weight: 700;
     text-align: center;
-}
-
-
-.btn {
-    margin-top: 1rem;
 }
 
 .login-form {
@@ -56,7 +50,7 @@
 }
 
 .login-form tr td:last-child input {
-padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     border: 1px solid black;
     border-radius: 20px;
     width:96%;
@@ -68,50 +62,11 @@ padding-bottom: 0.5rem;
     font-size: 3rem;
     margin: 0 auto;
     text-align: center;
-    margin-top:11rem;
+    margin-top: 15%;
     color: #FF7A00;
   padding-bottom: 3rem;
 }
 
-#message, #error {
-    display: none;
-    z-index: 5;
-    position: absolute;
-    width: 80%;
-    left: 10%;
-    top: 15%;
-    right: 10%;
-    text-align: center;
-}
-.btn {
-  width: -webkit-fill-available;
-
-}
-.ForgotPassword
-{
-  color:#007bff;
-  text-decoration: none;
-  background-color: transparent;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 80%;
-  font-weight: 400;
-  padding: 0px 15px 15px 15px
-}
-.loginInput
-{
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR…5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: 16px 18px;
-    background-position: 98% 50%;
-    cursor: auto;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 5px;
-    width:88%;
-}
 .card-login {
   position: relative;
   display: -webkit-box;
@@ -296,4 +251,9 @@ padding-bottom: 0.5rem;
 
 .accordion > .card .card-header {
   margin-bottom: -1px;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 5% !important;
 }

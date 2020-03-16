@@ -34,7 +34,7 @@
     margin-top: 5em !important;
 }
 
-.home-placeholder.search {
+.home-div .home-placeholder.search {
     animation: fadein 2s;
 }
 
@@ -44,8 +44,12 @@
     position: fixed;
     bottom: 1em;
     left: 1em;
+}
+
+.home-div .home-placeholder.rating {
     animation: fadein 2s;
 }
+
 .module-list-holder {
     display: none;
     width: calc(90% - 260px);
@@ -53,6 +57,9 @@
 
 .module-list-holder.search {
     display: block;
+}
+
+.home-div .module-list-holder.search {
     animation: fadein 1s;
 }
 
@@ -68,10 +75,18 @@
     margin: 1em 0 0 1em;
 }
 
+.home-div .sidebar.search {
+    animation: fadein 1s;
+}
+
 .sidebar.rating {
     display: block;
     animation: fadein 1s;
     margin-top: 5%;
+}
+
+.home-div .sidebar.rating {
+    animation: fadein 1s;
 }
 
 @media only screen and (max-width: 600px) {

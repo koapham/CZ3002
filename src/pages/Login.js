@@ -8,11 +8,20 @@ import { ReactComponent as NTU} from "./assets/ntu.svg";
 //import {ReactComponent as login} from "./assets/login.svg"
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+
+        this.login = this.login.bind(this);
+    }
+
+    login(event) {
+        //Login logic
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
             <div class="login" id="login" style={{background: '#FFF2c8' }}>
-                <div id="message" class="alert alert-success" role="alert" style={{display: 'none'}}></div>
-                <div id="error" class="alert alert-danger" role="alert" style={{display: 'none'}}></div>
                 <div class="container">
                     <h2 id="titleLogin">ShowTime</h2>
                     <div class="card-login mx-auto mt-5 login-form">
@@ -27,8 +36,7 @@ class Login extends Component {
                                         </td>
                                         <td>
                                           <input className="loginInput"
-                                            type="Enter Username"
-                                         />
+                                                 type={"text"} />
                                         </td>
                                     </tr>
                                     <tr>
@@ -37,15 +45,11 @@ class Login extends Component {
                                         </td>
                                         <td>
                                         <input className="loginInput"
-                                          type="Enter password"
-                                       />
+                                               type={"password"} />
                                         </td>
                                     </tr>
                               </table>
-                               <Button className="btn btn-primary btn-block" variant="contained" color="primary" style={{marginTop:'20px'}} component={Link} to="/home"> <span>Log In</span> </Button>
-                          </div>
-                          <div className="text-center">
-                              <Link className="ForgotPassword"  style={{float: 'right'}}>Forgot Password?</Link>
+                               <Button className="btn btn-primary btn-block login-btn" variant="contained" color="primary" onClick={this.login}> <span>Log In</span> </Button>
                           </div>
                     </div>
                 </div>
