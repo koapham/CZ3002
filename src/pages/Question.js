@@ -43,13 +43,14 @@ class Question extends Component {
     constructor(props) {
         super(props);
 
-        this.toggleSearch = this.toggleSearch.bind(this);
+        this.handleAnswer = this.handleAnswer.bind(this);
+        this.postAnswer = this.postAnswer.bind(this);
 
-        this.state = {searchClass: ""};
-    } 
-    
-    toggleSearch() {
-        this.setState( { searchClass : " search" } );
+        this.state = {answer: ""};
+    }
+
+    handleAnswer(event) {
+        this.setState({answer: event.target.value});
     }
 
     renderAnswer(answers){
@@ -66,6 +67,7 @@ class Question extends Component {
                         {"posted "+ans.datetime+" "}
                         <span className="owner">{ans.owner}</span>
                 </div>
+                <Divider/>
             </div>
             );
             
@@ -96,9 +98,9 @@ class Question extends Component {
                     <Divider/>
                     <div>
                         <div className="your-answer">Your Answer</div>
-                        <textarea rows={15} className = "type-answer"/>
+                        <textarea rows={15} className = "type-answer" onChange={this.handleAnswer}/>
                     </div>
-                    <Button variant="contained" color="primary">
+                    <Button onClick={this.postAnswer} variant="contained" color="primary">
                         Post Your Answer
                     </Button>
                 </div>
@@ -108,13 +110,29 @@ class Question extends Component {
         return <div>{items}</div>;
     }
 
+    postAnswer() {
+        console.log(this.state.answer);
+        console.log(localStorage.getItem('username'));
+
+        // fetch('https://mywebsite.com/endpoint/', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Accept': 'application/json',
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         title: this.state.title,
+        //         body: this.state.answer
+        //         username: localStorage.getItem('username')
+        //     })
+        // }).then(r => console.log(r))
+    }
+
     render(){
         return (
             <div className="home-div each-question">
                 <HomeIcon />
-                <SearchBar className="search" />
-                <Sidebar className = {"sidebar search"}/>
-                <HomePlaceholder className = "home-placeholder search"/>
+                <SearchBar className="search" history={this.props.history} />
                 <NavLink to="/askQuestion">
                     <div className="ask-question">Ask Question</div>
                 </NavLink>

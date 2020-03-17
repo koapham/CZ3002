@@ -50,9 +50,9 @@ class ModuleList extends Component {
                     {/*{this.state.courses.map(course =>*/}
                     {/*    <li>{course}</li>*/}
                     {/*)}*/}
-                    {data.reviews.map(course =>
+                    {this.props.courseList.courses.map(course =>
                         <li className="courseName">
-                            <NavLink to={course.url + '?course=' + course.courseName}>{course.courseName}</NavLink>
+                            <NavLink to={"/courseRating" + '?course=' + course.courseCode}>{course.courseCode}</NavLink>
                         </li>
                     )}
                 </ul>

@@ -10,6 +10,7 @@ import CourseReviewCard from "../components/CourseReviewCard";
 import Popup from "reactjs-popup";
 import queryString from 'query-string';
 import Button from '@material-ui/core/Button';
+import SearchBar from '../components/SearchBar';
 
 
 var data = {
@@ -45,8 +46,6 @@ class CourseRating extends Component {
     constructor(props) {
         super(props);
 
-        this.toggleSearch = this.toggleSearch.bind(this);
-
         this.state = {courseTitle: "-", courseCoordinator: "-"};
 
         let course = queryString.parse(this.props.location.search).course;
@@ -73,19 +72,11 @@ class CourseRating extends Component {
             });
     }
 
-    toggleSearch() {
-        this.setState( { searchClass : " rating" } );
-    }
-
     render() {
         return (
             <div className={"course-rating"}>
                 <HomeIcon />
-                <div className={ "input-holder center" }>
-                    <SearchIcon className="search-icon"/>
-                    <input id="course-search" className={"center"} placeholder="Type the code or title of a course"
-                           onChange={this.toggleSearch}/>
-                </div>
+                <SearchBar className={"search"} history={this.props.history} />
                 <Sidebar className={ "sidebar"}/>
                 <HomePlaceholder className={ "home-placeholder center" }  />
                 <div className="courseTitle">{this.state.courseTitle}</div>

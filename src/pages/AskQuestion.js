@@ -31,6 +31,7 @@ class AskQuestion extends Component {
     }
 
     submitForm(event) {
+        console.log(localStorage.getItem('username'));
         console.log(this.state.title);
         console.log(this.state.body);
         // fetch('https://mywebsite.com/endpoint/', {
@@ -41,7 +42,8 @@ class AskQuestion extends Component {
         //     },
         //     body: JSON.stringify({
         //         title: this.state.title,
-        //         body: this.state.body
+        //         body: this.state.body,
+        //         username: localStorage.getItem('username')
         //     })
         // }).then(r => console.log(r))
     }
@@ -62,7 +64,7 @@ class AskQuestion extends Component {
         return (
             <div className={"home-div course-forum"}>
                 <HomeIcon />
-                <SearchBar className="search" />
+                <SearchBar className="search" history={this.props.history} />
                 <HomePlaceholder className="avatar"  />
                 <div className="form">  
                     <div className="question-title-body">Title</div>

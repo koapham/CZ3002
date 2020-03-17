@@ -16,7 +16,8 @@ class Login extends Component {
 
     login(event) {
         //Login logic
-        this.props.history.push('/home')
+        localStorage.setItem('username', 'Er Chin'); //Set username/first name here
+        this.props.history.push('/home');
     }
 
     render() {

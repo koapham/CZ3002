@@ -7,6 +7,23 @@ import { ReactComponent as SearchIcon} from "./assets/search.svg";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
 import SearchBar from "../components/SearchBar";
 
+let courseList = {
+    courses: [
+        {
+            "courseCode": "CZ1003"
+        },
+        {
+            "courseCode": "CZ3002"
+        },
+        {
+            "courseCode": "CZ3003"
+        },
+        {
+            "courseCode": "CZ3004"
+        }
+    ]
+};
+
 class CourseInformation extends Component {
     constructor(props) {
         super(props);
@@ -29,9 +46,9 @@ class CourseInformation extends Component {
         return (
             <div className={"home-div course-info"}>
                 <HomeIcon />
-                <SearchBar className="search" toggleSearch={this.toggleSearch}/>
+                <SearchBar className="search" toggleSearch={this.toggleSearch} history={this.props.history}/>
                 <Sidebar className={ "sidebar" + this.state.searchClass }/>
-                <ModuleList className={ "module-list-holder" + this.state.searchClass }/>
+                <ModuleList className={ "module-list-holder" + this.state.searchClass } courseList={ courseList }/>
                 <HomePlaceholder className={ "home-placeholder center" + this.state.searchClass }  />
             </div>
         );

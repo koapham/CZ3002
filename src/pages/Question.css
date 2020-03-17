@@ -43,11 +43,12 @@
     display: inline-block;
     position: absolute;
     line-height: 2em;
+    width: 85%;
 }
 
 .each-question-frame {
-    width: 75%;
-    padding-left: 20em;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .vote-up {
@@ -76,6 +77,7 @@
 .type-answer {
     width: 100%;
     margin-bottom: 1em;
+    resize: none;
 }
 
 .your-answer {

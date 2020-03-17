@@ -98,7 +98,7 @@ class CourseForum extends Component {
         return (
             <div className={"home-div course-forum"}>
                 <HomeIcon />
-                <SearchBar className="search" />
+                <SearchBar className="search" history={this.props.history} />
                 <Sidebar className = {"sidebar search"}/>
                 <HomePlaceholder className = "home-placeholder search"/>
                 <span className="top-question">Top Questions</span>
