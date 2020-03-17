@@ -59,6 +59,10 @@ class CourseForum extends Component {
 
     renderForum(){
         const items = data.map((item)=>{
+            var color;
+            if(item.answer>=3) color = " full-green";
+            else if(item.answer>0) color = " border-green";
+            else color = "";
             return (
                 <div>
                 <Divider/>
@@ -66,23 +70,24 @@ class CourseForum extends Component {
                     <div className="vote text">
                         {item.vote} <span class="br"></span> {"votes"}
                     </div>
-                    <div className="answer text">
+                    <div className={"answer text"+color}>
                         {item.answer} <span class="br"></span> {"answers"}
                     </div>
                     <div className="view text">
                         {item.view} <span class="br"></span> {"views"}
                     </div>
-                    <div className="question big">
-                        {item.question}
-                    </div>
+                    <NavLink to="/question">
+                        <div className="question big">
+                            {item.question}
+                        </div>
+                    </NavLink>
                     <div className="info">
                         {"posted "+item.datetime}
                         <span className="owner">{item.owner}</span>
                     </div>
                 </ListItem>
                 </div>
-            ); 
-            
+            );  
         });
         return (<List className="forum">
                     {items}

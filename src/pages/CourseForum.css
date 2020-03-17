@@ -133,3 +133,17 @@
     color: #FF7A00;
 
 }
+
+.full-green {
+    background: #75B783;
+    border-radius: 7px;
+    padding: 0.2em;
+    color: white;
+}
+
+.border-green {
+    border: 2px solid #75B783;
+    box-sizing: border-box;
+    padding: 0.1em;
+    border-radius: 7px;
+}

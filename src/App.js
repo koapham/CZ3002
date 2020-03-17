@@ -11,6 +11,7 @@ import CourseForum from './pages/CourseForum';
 import CourseInformation from "./pages/CourseInformation";
 import CourseRating from "./pages/CourseRating";
 import AskQuestion from "./pages/AskQuestion";
+import Question from "./pages/Question";
 
 const theme = createMuiTheme({
   palette: {
@@ -38,6 +39,7 @@ class App extends Component {
                   <Route exact path="/courseInformation" component={CourseInformation} />
                   <Route exact path="/courseRating" component={CourseRating} />
                   <Route exact path="/askQuestion" component={AskQuestion} />
+                  <Route exact path="/question" component={Question} />
                 </Switch>
               </Router>
           </div>
