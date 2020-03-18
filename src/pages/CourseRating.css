@@ -75,31 +75,30 @@
 
 .courseReviewAddSection {
     background: #FFF2C8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 15px;
 }
 
 .courseReviewAddTitle {
-
+    width: 40%;
 }
 
-.courseReviewAddTitleContent {
-    width: 50%;
+.courseReviewAddRatingInputLabel {
+    margin-top: 15px;
 }
 
 .courseReviewAddRating {
-    margin-top: 15px;
 }
 
 .courseReviewAddRatingContent {
-    width: 50px;
+    width: 100%;
 }
 
 .courseReviewAddDescription {
+    display: block;
     margin-top: 15px;
-}
-
-.courseReviewAddDescriptionContent {
     width: 50%;
-    resize: both;
-    overflow: auto;
+    margin-bottom: 20px;
 }
