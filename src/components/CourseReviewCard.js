@@ -35,12 +35,12 @@ class CourseReviewCard extends Component {
                            <div className="course-review-card-section">
                                <SearchIcon className="course-review-card-profile-picture" />
                                {/*<img className={"course-review-card-profile-picture"} src="home-icon.svg"  alt="Profile Picture" />*/}
-                               <div className="course-review-card-review">{this.props.description}</div>
-                               <div className="course-review-card-date">{this.props.date}</div>
+                               <p className="course-review-card-review">{this.props.description}</p>
+                               <p className="course-review-card-date">{this.props.date}</p>
                                <Heart className="course-review-card-like-symbol" />
                                {/*<img className="course-review-card-like-symbol" src="home-icon.svg" alt="Like Symbol" />*/}
-                               <div className="course-review-card-like-number">{this.props.like}</div>
-                               <div className="course-review-card-rating-number">{this.props.rating}</div>
+                               <p className="course-review-card-like-number">{this.props.like}</p>
+                               <p className="course-review-card-rating-number">{this.props.rating}</p>
                                {/*<img className="course-review-card-rating-symbol" src="home-icon.svg" alt="Rating Symbol" />*/}
                                <Star className="course-review-card-rating-symbol" />
                            </div>

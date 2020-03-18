@@ -107,13 +107,14 @@ class CourseRating extends Component {
                 console.log(json);
 
                 for (let i = 0; i < json.length; i++) {
+                    count++;
+                    rating += json[i].rating;
+                    
                     if(json[i].timeStamp === undefined) {
                         json[i].timeStamp = '-';
                         continue;
                     }
                     let timestamp = new Date(json[i].timeStamp);
-                    count++;
-                    rating += json[i].rating;
                     json[i].timeStamp = timestamp.getDate() + " " + new Intl.DateTimeFormat('en-US', {month: 'short'}).format(timestamp) + " " + timestamp.getFullYear();
                 }
 
@@ -161,65 +162,67 @@ class CourseRating extends Component {
                 <SearchBar className={"search"} history={this.props.history} />
                 <Sidebar className={ "sidebar search"}/>
                 <HomePlaceholder className={ "home-placeholder center" }  />
-                <div className="courseTitle">{this.state.courseTitle}</div>
-                <a href="#" className="courseContent">Content</a>
-                <div className="courseCoord">
-                    <div className="courseCoordinator">Course Coordinator</div>
-                    <div className="courseCoordinatorContent">Dr {this.state.courseCoordinator}</div>
-                </div>
-                <div className="courseRating">
-                    <HomePlaceholder className="courseAverageRatingSymbol" />
-                    <div className="courseAverageRating">{this.state.averageRating}</div>
-                </div>
-                <Popup trigger=
-                           {
-                               <div className="courseReviewAdd">Add Rating</div>
-                           } modal closeOnDocumentClick>
-                    <div className="courseReviewAddSection">
-                            <TextField required className="courseReviewAddTitle" label="Title" value={this.state.addTitle} defaultValue="Title" onChange={this.handleChangeAddTitle} />
-                            <div className="courseReviewAddRating">
-                                <InputLabel id="addRatingInputLabel" className="courseReviewAddRatingInputLabel">Rating</InputLabel>
-                                <Select
-                                    labelId="addRatingInputLabel"
-                                    className="courseReviewAddRatingContent"
-                                    value={this.state.addRating}
-                                    onChange={this.handleChangeAddRating}
-                                >
-                                    <MenuItem value=""></MenuItem>
-                                    <MenuItem value={1}>1</MenuItem>
-                                    <MenuItem value={2}>2</MenuItem>
-                                    <MenuItem value={3}>3</MenuItem>
-                                    <MenuItem value={4}>4</MenuItem>
-                                    <MenuItem value={5}>5</MenuItem>
-                                    <MenuItem value={6}>6</MenuItem>
-                                    <MenuItem value={7}>7</MenuItem>
-                                    <MenuItem value={8}>8</MenuItem>
-                                    <MenuItem value={9}>9</MenuItem>
-                                    <MenuItem value={10}>10</MenuItem>
-                                </Select>
-                            </div>
-                            <TextField
-                                className="courseReviewAddDescription"
-                                label="Description"
-                                multiline
-                                rowsMax="6"
-                                value={this.state.addDescription}
-                                onChange={this.handleChangeAddDescription}
-                            />
-                        <SubmitButton className="courseReviewAddSubmitButton" variant="contained" onChange={this.handleSubmitButton}>Submit</SubmitButton>
+                <div className={"course-rating-holder"}>
+                    <div className="courseTitle">{this.state.courseTitle}</div>
+                    <a href="#" className="courseContent">Content</a>
+                    <div className="courseCoord">
+                        <div className="courseCoordinator">Course Coordinator</div>
+                        <div className="courseCoordinatorContent">Dr {this.state.courseCoordinator}</div>
                     </div>
-                </Popup>
-                <hr className="lineDivision" />
-                <div className="courseReviews">
-                    {
-                        this.state.courseRatings.map(review =>
-                        <CourseReviewCard
-                            description={review.description}
-                            date={review.timeStamp}
-                            like={review.likes}
-                            rating={review.rating}
-                        />
-                    )}
+                    <div className="courseRating">
+                        <Star className="courseAverageRatingSymbol" />
+                        <div className="courseAverageRating">{this.state.averageRating}</div>
+                    </div>
+                    <Popup trigger=
+                               {
+                                   <div className="courseReviewAdd">Add Rating</div>
+                               } modal closeOnDocumentClick>
+                        <div className="courseReviewAddSection">
+                                <TextField required className="courseReviewAddTitle" label="Title" value={this.state.addTitle} defaultValue="Title" onChange={this.handleChangeAddTitle} />
+                                <div className="courseReviewAddRating">
+                                    <InputLabel id="addRatingInputLabel" className="courseReviewAddRatingInputLabel">Rating</InputLabel>
+                                    <Select
+                                        labelId="addRatingInputLabel"
+                                        className="courseReviewAddRatingContent"
+                                        value={this.state.addRating}
+                                        onChange={this.handleChangeAddRating}
+                                    >
+                                        <MenuItem value=""></MenuItem>
+                                        <MenuItem value={1}>1</MenuItem>
+                                        <MenuItem value={2}>2</MenuItem>
+                                        <MenuItem value={3}>3</MenuItem>
+                                        <MenuItem value={4}>4</MenuItem>
+                                        <MenuItem value={5}>5</MenuItem>
+                                        <MenuItem value={6}>6</MenuItem>
+                                        <MenuItem value={7}>7</MenuItem>
+                                        <MenuItem value={8}>8</MenuItem>
+                                        <MenuItem value={9}>9</MenuItem>
+                                        <MenuItem value={10}>10</MenuItem>
+                                    </Select>
+                                </div>
+                                <TextField
+                                    className="courseReviewAddDescription"
+                                    label="Description"
+                                    multiline
+                                    rowsMax="6"
+                                    value={this.state.addDescription}
+                                    onChange={this.handleChangeAddDescription}
+                                />
+                            <SubmitButton className="courseReviewAddSubmitButton" variant="contained" onChange={this.handleSubmitButton}>Submit</SubmitButton>
+                        </div>
+                    </Popup>
+                    <hr className="lineDivision" />
+                    <div className="courseReviews">
+                        {
+                            this.state.courseRatings.map(review =>
+                            <CourseReviewCard
+                                description={review.description}
+                                date={review.timeStamp}
+                                like={review.likes}
+                                rating={review.rating}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
         );
