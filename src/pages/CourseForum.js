@@ -76,7 +76,7 @@ class CourseForum extends Component {
                     <div className="view text">
                         {item.view} <span class="br"></span> {"views"}
                     </div>
-                    <NavLink to="/question">
+                    <NavLink to={"/question" + '?title=' + item.question.replace(/\s+/g, '-')}>
                         <div className="question big">
                             {item.question}
                         </div>
