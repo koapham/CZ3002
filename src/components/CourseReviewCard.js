@@ -29,7 +29,7 @@ class CourseReviewCard extends Component {
         return (
             <Popup trigger=
                        {
-                           <div className={this.evenOrOdd_1 ? 'course-review-card-section-even' : 'course-review-card-section-odd'}>
+                           <div className="course-review-card-section">
                                <SearchIcon className="course-review-card-profile-picture" />
                                {/*<img className={"course-review-card-profile-picture"} src="home-icon.svg"  alt="Profile Picture" />*/}
                                <div className="course-review-card-review">{this.props.description}</div>
