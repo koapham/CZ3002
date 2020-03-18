@@ -11,6 +11,27 @@ import "./Question.css";
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
 import { ReactComponent as Vote} from "./assets/rectangle.svg";
+import queryString from 'query-string';
+
+let testAns = {
+    "eachAnswer": [
+        {
+            "content": "That image is called a \"texture\".\n"
+                + "That texture is mapped onto 3d model of a lion resulting a \"lion character\""
+                + "In other word, your \"lion character\" = texture + 3D model of a lion.\n"
+                + "Every character skin you're using xcode to open is just the \"texture image\" as mentioned by @GeneCode\"" ,
+            "vote": 5,
+            "datetime": "15 hours ago",
+            "owner": "Dog"
+        },
+        {
+            "content": "Take a look at this: https://github.com/games647/Minecraft-Skin-Renderer",
+            "vote": 0,
+            "datetime": "2 hours ago",
+            "owner": "Cat"
+        }
+    ]
+};
 
 var data = [
     {
@@ -87,11 +108,43 @@ class Question extends Component {
         this.handleAnswer = this.handleAnswer.bind(this);
         this.postAnswer = this.postAnswer.bind(this);
 
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const title = urlParams.get('title');
+        let title = queryString.parse(this.props.location.search).title;
 
-        this.state = {answer: "", count: 0, title: title};
+        this.state = {answer: "", count: 0, title: title, body: '', timeStamp: '', owner: ''};
+    }
+
+    componentDidMount() {
+        let course = localStorage.getItem("course");
+        let URL = 'https://sunny-inn-269207.appspot.com/readall?collectionName=courses/' + course + '/threads';
+
+        fetch(URL)
+            .then(response => response.json())
+            .then(json => {
+                // this.setState({
+                //     courseTitle: json.courseName,
+                //     courseCoordinator: json.courseCoord
+                // });
+                console.log(json);
+
+                for(let i = 0; i < json.length; i++) {
+                    if(json[i].title === this.state.title) {
+                        let timestamp = new Date(json[i].timeStamp);
+
+                        json[i].timeStamp = timestamp.getDate() + " " + new Intl.DateTimeFormat('en-US', {month: 'short'}).format(timestamp) + " " + timestamp.getFullYear();
+
+                        this.setState({
+                            title: json[i].title,
+                            body: json[i].body,
+                            timeStamp: json[i].timeStamp,
+                            owner: json[i].owner
+
+                        });
+                        break;
+                    }
+                }
+
+                this.setState({"threads": json});
+            });
     }
 
     handleAnswer(event) {
@@ -143,13 +196,13 @@ class Question extends Component {
         const question = data.filter((el)=>{
             return !(el.title.replace(/\s+/g, '-').localeCompare(this.state.title));
         }) 
-        const items = question.map((item)=>{
+        //const items = question.map((item)=>{
             return (
                 <div className="each-question-frame">   
-                    <div className="each-question-title">{item.title}</div>
+                    <div className="each-question-title">{this.state.title}</div>
                     <div className="each-question-info-owner">
-                        {"posted "+item.datetime}
-                        <span className="owner">{item.owner}</span>
+                        {"posted "+this.state.timeStamp}
+                        <span className="owner">{this.state.owner}</span>
                     </div>
                     <Divider/>
                     <div className="vote-up-down">
@@ -179,11 +232,11 @@ class Question extends Component {
                             <ExpandMoreIcon fontSize="large" color="primary"/>
                         </IconButton>
                     </div>
-                    <div className="each-question-body">{item.body}</div>
+                    <div className="each-question-body">{this.state.body}</div>
                     <span className="br"></span>
-                    <div className="no-of-answer">{item.answer+" Answer(s)"}</div>
+                    <div className="no-of-answer">{this.state.answer+" Answer(s)"}</div>
                     <Divider/>
-                    {this.renderAnswer(item.eachAnswer)}
+                    {this.renderAnswer(testAns.eachAnswer)}
                     <Divider/>
                     <div>
                         <div className="your-answer">Your Answer</div>
@@ -195,8 +248,8 @@ class Question extends Component {
                 </div>
                 
             );
-        });
-        return <div>{items}</div>;
+        //});
+        //return <div>{items}</div>;
     }
 
     postAnswer() {

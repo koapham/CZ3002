@@ -50,15 +50,39 @@ class CourseForum extends Component {
 
         this.toggleSearch = this.toggleSearch.bind(this);
 
-        this.state = {searchClass: ""};
-    } 
-    
+        this.state = {searchClass: "", threads: []};
+    }
+
+    componentDidMount() {
+        let course = localStorage.getItem("course");
+        let URL = 'https://sunny-inn-269207.appspot.com/readall?collectionName=courses/' + course + '/threads';
+
+        fetch(URL)
+            .then(response => response.json())
+            .then(json => {
+                // this.setState({
+                //     courseTitle: json.courseName,
+                //     courseCoordinator: json.courseCoord
+                // });
+                console.log(json);
+
+                for(let i = 0; i < json.length; i++) {
+                    let timestamp = new Date(json[i].timeStamp);
+
+                    json[i].timeStamp = timestamp.getDate() + " " + new Intl.DateTimeFormat('en-US', {month: 'short'}).format(timestamp) + " " + timestamp.getFullYear();
+                    json[i].answer = 0;
+                }
+
+                this.setState({"threads": json});
+            });
+    }
+
     toggleSearch() {
         this.setState( { searchClass : " search" } );
     }
 
     renderForum(){
-        const items = data.map((item)=>{
+        const items = this.state.threads.map((item)=>{
             var color;
             if(item.answer>=3) color = " full-green";
             else if(item.answer>0) color = " border-green";
@@ -68,22 +92,22 @@ class CourseForum extends Component {
                 <Divider/>
                 <ListItem className="list">
                     <div className="vote text">
-                        {item.vote} <span class="br"></span> {"votes"}
+                        {item.votes} <span class="br"></span> {"votes"}
                     </div>
                     <div className={"answer text"+color}>
                         {item.answer} <span class="br"></span> {"answers"}
                     </div>
                     <div className="view text">
-                        {item.view} <span class="br"></span> {"views"}
+                        {item.views} <span class="br"></span> {"views"}
                     </div>
-                    <NavLink to={"/question" + '?title=' + item.question.replace(/\s+/g, '-')}>
+                    <NavLink to={"/question" + '?title=' + item.title}>
                         <div className="question big">
-                            {item.question}
+                            {item.title}
                         </div>
                     </NavLink>
                     <div className="info">
-                        {"posted "+item.datetime}
-                        <span className="owner">{item.owner}</span>
+                        <span className="owner">{item.username}</span>
+                        {" posted on "+item.timeStamp}
                     </div>
                 </ListItem>
                 </div>

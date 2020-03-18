@@ -28,9 +28,8 @@
 
 .each-question-info {
     color: #848383;
-    padding-bottom: 1em;
-    margin-top: 1em;
-    padding-left: 50em;
+    margin: 2%;
+    text-align: right;
 }
 
 .each-question-info-owner {

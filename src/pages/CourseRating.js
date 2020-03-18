@@ -6,6 +6,7 @@ import "./Home.css";
 import "./CourseRating.css";
 import { ReactComponent as SearchIcon} from "./assets/search.svg";
 import { ReactComponent as HomePlaceholder} from "./assets/home-placeholder.svg";
+import { ReactComponent as Star} from "./assets/star.svg";
 import CourseReviewCard from "../components/CourseReviewCard";
 import Popup from "reactjs-popup";
 import queryString from 'query-string';
@@ -46,11 +47,7 @@ class CourseRating extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {courseTitle: "-", courseCoordinator: "-", courseRatings: [], ratingCount: 1, averageRating: 0};
-
-
-
-
+        this.state = {courseTitle: "-", courseCoordinator: "-", courseRatings: [], ratingCount: 1, averageRating: '-'};
     }
 
     componentDidMount() {
@@ -82,9 +79,17 @@ class CourseRating extends Component {
                     courseRatings: json
                 });
 
+                console.log(json);
+
                 for (let i = 0; i < json.length; i++) {
+                    if(json[i].timeStamp === undefined) {
+                        json[i].timeStamp = '-';
+                        continue;
+                    }
+                    let timestamp = new Date(json[i].timeStamp);
                     count++;
                     rating += json[i].rating;
+                    json[i].timeStamp = timestamp.getDate() + " " + new Intl.DateTimeFormat('en-US', {month: 'short'}).format(timestamp) + " " + timestamp.getFullYear();
                 }
 
                 this.setState({averageRating: rating/count});
@@ -98,52 +103,54 @@ class CourseRating extends Component {
                 <SearchBar className={"search"} history={this.props.history} />
                 <Sidebar className={ "sidebar search"}/>
                 <HomePlaceholder className={ "home-placeholder center" }  />
-                <div className="courseTitle">{this.state.courseTitle}</div>
-                <a href="#" className="courseContent">Content</a>
-                <div className="courseCoord">
-                    <div className="courseCoordinator">Course Coordinator</div>
-                    <div className="courseCoordinatorContent">Dr {this.state.courseCoordinator}</div>
-                </div>
-                <div className="courseRating">
-                    <HomePlaceholder className="courseAverageRatingSymbol" />
-                    <div className="courseAverageRating">{this.state.averageRating}</div>
-                </div>
-                <Popup trigger=
-                           {
-                               <div className="courseReviewAdd">Add Rating</div>
-                           } modal closeOnDocumentClick>
-                    <div className="courseReviewAddSection">
-                        <div className="courseReviewAddTitle">Title</div>
-                        <input type="text" className="courseReviewAddTitleContent" />
-                        <label for={"rating"}>Rating: </label>
-                        <select id={"rating"}>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                        <div type="text" className="courseReviewAddDescription">Description</div>
-                        <input type="text" className="courseReviewAddDescriptionContent" />
+                <div className={"course-rating-holder"}>
+                    <p className="courseTitle">{this.state.courseTitle}</p>
+                    <div className="courseCoord">
+                        <div className="courseCoordinator">Course Coordinator</div>
+                        <div className="courseCoordinatorContent">{this.state.courseCoordinator}</div>
                     </div>
-                </Popup>
-                <hr className="lineDivision" />
-                <div className="courseReviews">
-                    {
-                        this.state.courseRatings.map((review) =>
-                        <CourseReviewCard
-                            id={this.state.ratingCount}
-                            description={review.description}
-                            date={review.timeStamp}
-                            like={review.likes}
-                            rating={review.rating}
-                        />
-                    )}
+                    <a href="#" className="courseContent">Content</a>
+                    <div className="courseRating">
+                        <Star className="courseAverageRatingSymbol" />
+                        <div className="courseAverageRating">{this.state.averageRating}</div>
+                    </div>
+                    <Popup trigger=
+                               {
+                                   <div className="courseReviewAdd">Add Rating</div>
+                               } modal closeOnDocumentClick>
+                        <div className="courseReviewAddSection">
+                            <div className="courseReviewAddTitle">Title</div>
+                            <input type="text" className="courseReviewAddTitleContent" />
+                            <label for={"rating"}>Rating: </label>
+                            <select id={"rating"}>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <div type="text" className="courseReviewAddDescription">Description</div>
+                            <input type="text" className="courseReviewAddDescriptionContent" />
+                        </div>
+                    </Popup>
+                    <hr className="lineDivision" />
+                    <div className="courseReviews">
+                        {
+                            this.state.courseRatings.map((review) =>
+                            <CourseReviewCard
+                                id={this.state.ratingCount}
+                                description={review.description}
+                                date={review.timeStamp}
+                                like={review.likes}
+                                rating={review.rating}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
         );

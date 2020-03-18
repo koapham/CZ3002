@@ -1,22 +1,22 @@
+.course-rating-holder {
+    width: calc(95% - 260px);
+    margin: 1% 1% auto auto;
+}
+
 .courseTitle {
-    position: relative;
-    top: 1.5em;
-    left: 4em;
     font-size: x-large;
     font-weight: bold;
+    color: black;
 }
 
 .courseContent {
-    position: relative;
-    top: 5em;
-    left: 5.5em;
     font-size: large;
+    margin-top: 2.5em;
+    display: block;
+    float: left;
 }
 
 .courseCoord {
-    position: relative;
-    top: 2em;
-    left: 6.1em;
 }
 
 .courseCoordinator {
@@ -33,8 +33,6 @@
 }
 
 .courseRating {
-    position: relative;
-    top: -2.3em;
 }
 
 .courseAverageRating {
@@ -55,14 +53,13 @@
 
 .lineDivision {
     display: block;
-    margin-left: 20%;
-    margin-top: 4.5em;
-    margin-right: 8%;
+    margin: 5% auto auto 0;
+    width: 90%;
 }
 
 .courseReviews {
     margin-top: 0.5em;
-    margin-left: 20%;
+    width: 90%;
 }
 
 .courseReviewAdd {

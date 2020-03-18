@@ -34,18 +34,22 @@ class AskQuestion extends Component {
         console.log(localStorage.getItem('username'));
         console.log(this.state.title);
         console.log(this.state.body);
-        // fetch('https://mywebsite.com/endpoint/', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         title: this.state.title,
-        //         body: this.state.body,
-        //         username: localStorage.getItem('username')
-        //     })
-        // }).then(r => console.log(r))
+        let username = localStorage.getItem('username');
+        let course = localStorage.getItem('course');
+        fetch('https://sunny-inn-269207.appspot.com/create?collectionName=courses/' + course + '/threads&documentName=' + this.createUUID(), {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                body: this.state.body,
+                username: localStorage.getItem('username'),
+                views: 0,
+                votes: 0
+            })
+        }).then(r => console.log(r))
     }
 
     openDiscardModal() {
@@ -58,6 +62,13 @@ class AskQuestion extends Component {
 
     discardForm(event) {
         this.props.history.push('/courseForum')
+    }
+
+    createUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     }
 
     render() {
