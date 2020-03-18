@@ -52,7 +52,6 @@ class Home extends Component {
         let re = new RegExp(".*" + query + ".*", "i");
 
         for (let course of courseList.courses) {
-            console.log(re.test(course.courseCode));
             if (course.courseCode.match(re)) {
                 this.matchedCourses.courses.push({courseCode: course.courseCode});
             }

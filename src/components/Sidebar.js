@@ -22,7 +22,7 @@ class Sidebar extends Component {
         if(selected === 'course-info')
             courseInfo = ' active';
         else if(selected === 'course-eval')
-        courseForum = ' active';
+            courseForum = ' active';
 
         this.setState( {courseInfo: courseInfo, courseForum: courseForum} );
     }
@@ -36,7 +36,7 @@ class Sidebar extends Component {
                     {/*    <CourseInfoIcon />*/}
                     {/*    <p>Course Information</p>*/}
                     {/*</a>*/}
-                    <NavLink to="/courseInformation" id="course-info" activeClassName="sidebar-item-holder-active" aria-current="page">
+                    <NavLink to={"/courseRating?course=" + localStorage.getItem("course")}  id="course-info" activeClassName="sidebar-item-holder-active" aria-current="page">
                         <CourseInfoIcon />
                         <p>Course Information</p>
                     </NavLink>
