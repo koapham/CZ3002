@@ -53,19 +53,22 @@
 
 .vote-up {
     width: 30px;
-
+    display: block;
+    position: absolute;
 }
 
 .vote-down {
-    transform: rotate(180deg);
-    margin-top: 0.3em;
+    margin: 0;
     width: 30px;
+    display: block;
+    position: absolute;
+    padding: 0;
 }
 
 .vote-up-down {
     display: inline-block;
     width: 20px;
-    padding: 0.5em 0;
+    padding: 0.2em 0.2em 3em 0.2em;
 }
 
 .each-question-rating {
