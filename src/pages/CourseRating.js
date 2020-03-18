@@ -46,10 +46,11 @@ class CourseRating extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {courseTitle: "-", courseCoordinator: "-"};
+        this.state = {courseTitle: "-", courseCoordinator: "-", courseRatings: ''};
 
         let course = queryString.parse(this.props.location.search).course;
-        let URL = 'https://sunny-inn-269207.appspot.com/read/';
+        let URL = 'https://sunny-inn-269207.appspot.com/read?collectionName=courses&documentName=';
+        let ratingURL = 'https://sunny-inn-269207.appspot.com/readall?collectionName=courses/' + course + '/ratings';
         let endpoint, id;
 
         if(course === 'CZ3002')
@@ -59,7 +60,7 @@ class CourseRating extends Component {
         else if(course === 'CZ3004')
             id = '/WotB0wHrIAaGwNXqefOF';
 
-        endpoint = URL + course + id;
+        endpoint = URL + course;
 
         fetch(endpoint)
             .then(response => response.json())
@@ -68,6 +69,15 @@ class CourseRating extends Component {
                 this.setState({
                     courseTitle: json.courseName,
                     courseCoordinator: json.courseCoord
+                });
+            });
+
+        fetch(ratingURL)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                this.setState({
+                    courseRatings: json
                 });
             });
     }
@@ -104,16 +114,7 @@ class CourseRating extends Component {
                 </Popup>
                 <hr className="lineDivision" />
                 <div className="courseReviews">
-                    {data.reviews.map(review =>
-                        <CourseReviewCard
-                            id={review.id}
-                            title={review.title}
-                            description={review.description}
-                            date={review.date}
-                            like={review.like}
-                            rating={review.rating}
-                        />
-                    )}
+                    
                 </div>
             </div>
         );

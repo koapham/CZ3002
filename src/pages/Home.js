@@ -75,7 +75,6 @@ class Home extends Component {
                 <p id="welcome-msg" className={ "center" + this.state.searchClass }>Hey Jia Chin!</p>
                 <h1 id="title" className={ "center" + this.state.searchClass }>Welcome to Showtime</h1>
                 <SearchBar className={ this.state.searchClass } toggleSearch={this.toggleSearch} query={ this.state.query } history={this.props.history}/>
-                <Sidebar className={ "sidebar" + this.state.searchClass }/>
                 <ModuleList className={ "module-list-holder" + this.state.searchClass } courseList={ this.matchedCourses }/>
                 <HomePlaceholder className={ "home-placeholder center" + this.state.searchClass }  />
             </div>

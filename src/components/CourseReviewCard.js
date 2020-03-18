@@ -32,7 +32,7 @@ class CourseReviewCard extends Component {
                            <div className={this.evenOrOdd_1 ? 'course-review-card-section-even' : 'course-review-card-section-odd'}>
                                <SearchIcon className="course-review-card-profile-picture" />
                                {/*<img className={"course-review-card-profile-picture"} src="home-icon.svg"  alt="Profile Picture" />*/}
-                               <div className="course-review-card-review">{this.props.title}</div>
+                               <div className="course-review-card-review">{this.props.description}</div>
                                <div className="course-review-card-date">{this.props.date}</div>
                                <HomePlaceholder className="course-review-card-like-symbol" />
                                {/*<img className="course-review-card-like-symbol" src="home-icon.svg" alt="Like Symbol" />*/}
