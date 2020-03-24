@@ -29,18 +29,7 @@ class ModuleList extends Component {
     }
 
     componentDidMount() {
-        fetch("https://909d2921.ngrok.io/read/users/TMc8Iiu2P9cdZBgFQdrx")
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    this.setState({
-                        courses: data["registeredCourses "]
-                    });
-                },
-                (error) => {
-                    console.log("Unable to do request");
-                }
-            )
+
     }
 
     render() {

@@ -6,6 +6,7 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
 
+        this.search = this.search.bind(this);
         this.toggleSearch = this.toggleSearch.bind(this);
         this.updateQuery = this.updateQuery.bind(this);
         this.checkEnter = this.checkEnter.bind(this);
@@ -18,10 +19,17 @@ class SearchBar extends Component {
     }
 
     toggleSearch(event) {
-        this.setState( { searchClass : " search", query: event.target.value } );
+        this.setState( { searchClass : " search"} );
 
         if(this.props.toggleSearch !== undefined)
             this.props.toggleSearch(event.target.value);
+    }
+
+    search(event) {
+        this.setState( { query: event.target.value } );
+
+        if(this.props.search !== undefined)
+            this.props.search(event.target.value);
     }
 
     checkEnter(event) {
@@ -36,7 +44,7 @@ class SearchBar extends Component {
             <div className={ "input-holder " + this.props.className + " " + this.state.searchClass}>
                     <SearchIcon className={"search-icon"}/>
                     <input id="course-search" className={"center"} placeholder="Type the code or title of a course"
-                           onChange={this.toggleSearch} onKeyPress={this.checkEnter} value={this.state.query}/>
+                           onChange={this.search} onClick={this.toggleSearch} onKeyPress={this.checkEnter} value={this.state.query}/>
             </div>
         );
     }

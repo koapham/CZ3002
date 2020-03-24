@@ -33,27 +33,30 @@
 }
 
 .courseRating {
+    position: relative;
+    float: right;
 }
 
 .courseAverageRating {
     display: inline-block;
-    float: right;
     margin-right: 0.5em;
+    float: right;
     font-size: xx-large;
     color: #FF7A00;
 }
 
 .courseAverageRatingSymbol {
     display: inline-block;
-    float: right;
     margin-right: 10em;
+    float:right;
     width: 2em;
     height: 2em;
+    margin-top: 0.3em;
 }
 
 .lineDivision {
     display: block;
-    margin: 5% auto auto 0;
+    margin: 4em auto auto 0;
     width: 90%;
 }
 
@@ -63,14 +66,14 @@
 }
 
 .courseReviewAdd {
-    position: relative;
     float: right;
+    height: 2em;
+    margin-right: 1em;
     background-color: #FF7A00;
-    padding: 4px 12px;
-    margin-top: 2.5em;
-    margin-right: -3em;
+    padding: 0.4em 0.8em;
     border-radius: 10px;
     cursor: pointer;
+    line-height: 2em;
 }
 
 .courseReviewAddSection {

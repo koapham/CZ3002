@@ -110,7 +110,7 @@ class Question extends Component {
 
         let title = queryString.parse(this.props.location.search).title;
 
-        this.state = {answer: "", count: 0, title: title, body: '', timeStamp: '', owner: ''};
+        this.state = {answer: "", count: 0, title: title, body: '', timeStamp: '', owner: '', num_of_answer: 0};
     }
 
     componentDidMount() {
@@ -234,7 +234,7 @@ class Question extends Component {
                     </div>
                     <div className="each-question-body">{this.state.body}</div>
                     <span className="br"></span>
-                    <div className="no-of-answer">{this.state.answer+" Answer(s)"}</div>
+                    <div className="no-of-answer">{this.state.num_of_answer+" Answer(s)"}</div>
                     <Divider/>
                     {this.renderAnswer(testAns.eachAnswer)}
                     <Divider/>
@@ -252,22 +252,34 @@ class Question extends Component {
         //return <div>{items}</div>;
     }
 
+    getNewID() {
+        //This should return the new index for the new reply
+        //E.g. First reply to a thread is documentName 1, second reply will be 2 etc
+    }
+
     postAnswer() {
         console.log(this.state.answer);
         console.log(localStorage.getItem('username'));
 
-        // fetch('https://mywebsite.com/endpoint/', {
+        // fetch('https://sunny-inn-269207.appspot.com/create?collectionName=courses/'+localStorage.getItem("course")+'/threads/'+localStorage.getItem("thread")+'/reply&documentName=' + this.getNewID(), {
         //     method: 'POST',
         //     headers: {
         //         'Accept': 'application/json',
         //         'Content-Type': 'application/json',
         //     },
         //     body: JSON.stringify({
-        //         title: this.state.title,
-        //         body: this.state.answer
-        //         username: localStorage.getItem('username')
+        //         content: this.state.answer,
+        //         username: localStorage.getItem('username'),
+        //         votes: 0
         //     })
         // }).then(r => console.log(r))
+    }
+
+    createUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     }
 
     render(){

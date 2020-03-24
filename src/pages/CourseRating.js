@@ -167,17 +167,16 @@ class CourseRating extends Component {
                     <a href="#" className="courseContent">Content</a>
                     <div className="courseCoord">
                         <div className="courseCoordinator">Course Coordinator</div>
-                        <div className="courseCoordinatorContent">Dr {this.state.courseCoordinator}</div>
+                        <div className="courseCoordinatorContent">{this.state.courseCoordinator}</div>
                     </div>
                     <div className="courseRating">
                         <Star className="courseAverageRatingSymbol" />
                         <div className="courseAverageRating">{this.state.averageRating}</div>
-                    </div>
-                    <Popup trigger=
-                               {
-                                   <div className="courseReviewAdd">Add Rating</div>
-                               } modal closeOnDocumentClick>
-                        <div className="courseReviewAddSection">
+                        <Popup trigger=
+                                   {
+                                       <div className="courseReviewAdd">Add Rating</div>
+                                   } modal closeOnDocumentClick>
+                            <div className="courseReviewAddSection">
                                 <TextField required className="courseReviewAddTitle" label="Title" value={this.state.addTitle} defaultValue="Title" onChange={this.handleChangeAddTitle} />
                                 <div className="courseReviewAddRating">
                                     <InputLabel id="addRatingInputLabel" className="courseReviewAddRatingInputLabel">Rating</InputLabel>
@@ -208,9 +207,11 @@ class CourseRating extends Component {
                                     value={this.state.addDescription}
                                     onChange={this.handleChangeAddDescription}
                                 />
-                            <SubmitButton className="courseReviewAddSubmitButton" variant="contained" onChange={this.handleSubmitButton}>Submit</SubmitButton>
-                        </div>
-                    </Popup>
+                                <SubmitButton className="courseReviewAddSubmitButton" variant="contained" onChange={this.handleSubmitButton}>Submit</SubmitButton>
+                            </div>
+                        </Popup>
+                    </div>
+
                     <hr className="lineDivision" />
                     <div className="courseReviews">
                         {

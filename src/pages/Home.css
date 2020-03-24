@@ -85,6 +85,11 @@
     animation: fadein 1s;
 }
 
+.sidebar-item-holder-active {
+    border-radius: 50px;
+    background: #FF7A00;
+}
+
 @media only screen and (max-width: 600px) {
     .home-placeholder {
         display: none;
