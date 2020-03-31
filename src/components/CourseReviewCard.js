@@ -51,7 +51,7 @@ class CourseReviewCard extends Component {
                         <Star className="course-review-card-detail-rating-symbol" />
                         <div className="course-review-card-detail-rating">{this.props.rating}</div>
                         <div className="course-review-card-detail-like" onClick={this.onLikeClick}>
-                            {this.state.like ? <SearchIcon className="course-review-card-detail-like-symbol"/> : <Heart className="course-review-card-detail-like-symbol" />}
+                            {this.state.like ? <HeartFilled className="course-review-card-detail-like-symbol"/> : <Heart className="course-review-card-detail-like-symbol" />}
                     </div>
                     </div>
                     <div className="course-review-card-detail-date">{this.props.date}</div>
