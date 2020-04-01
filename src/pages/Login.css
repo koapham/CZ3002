@@ -1,17 +1,14 @@
 .container {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #FFF2c8;
+    background: url("assets/open-book.jpg") no-repeat;
+    background-size: 100vw 100vh;
     opacity: 90%;
 }
 
-.Login{
-  background:#FFF2c8
-}
 .card-header {
     background-color: rgba(255,255,255,0.4);
 }
@@ -44,13 +41,11 @@
 }
 
 .login-form tr td:first-child p {
-    margin: 0 auto;
     font-weight: 600;
     margin-left: 10%;
 }
 
 .login-form tr td:last-child input {
-    padding-bottom: 0.5rem;
     border: 1px solid black;
     border-radius: 20px;
     width:96%;
@@ -60,11 +55,11 @@
 #titleLogin {
     width: 100%;
     font-size: 3rem;
-    margin: 0 auto;
+    margin: 20% auto 0 auto;
     text-align: center;
-    margin-top: 15%;
-    color: #FF7A00;
-  padding-bottom: 3rem;
+    color: white;
+    padding-bottom: 3rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .card-login {
@@ -78,7 +73,6 @@
   -ms-flex-direction: column;
   flex-direction: column;
   min-width: 0;
-  word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -209,20 +203,20 @@
   margin-bottom: 15px;
 }
 @media (min-width: 576px) {
-  .card-columns {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-    column-gap: 1.25rem;
-    orphans: 1;
-    widows: 1;
-  }
-  .card-columns .card {
-    display: inline-block;
-    width: 100%;
-  }
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: 1.25rem;
+        -moz-column-gap: 1.25rem;
+        column-gap: 1.25rem;
+        orphans: 1;
+        widows: 1;
+    }
+    .card-columns .card {
+        display: inline-block;
+        width: 100%;
+    }
 }
 
 .accordion > .card {
@@ -256,4 +250,16 @@
 .login-btn {
     width: 100%;
     margin-top: 5% !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        background: url("assets/open-book-mobile.jpg") no-repeat;
+        background-size: 100vw 100vh;
+    }
+
+    .login-form {
+        width: 90%;
+        margin-top: 10%;
+    }
 }

@@ -66,16 +66,18 @@ class Home extends Component {
                         registeredCourses: courses,
                         courseList: courses
                     });
+
+                    let query = queryString.parse(this.props.location.search).query;
+                    if (query !== undefined && query.length > 0) {
+                        this.toggleSearch();
+                        this.search(query);
+                    }
                 },
                 (error) => {
                     console.log("Unable to do request");
                 }
             )
 
-        let query = queryString.parse(this.props.location.search).query;
-        if (query !== undefined && query.length > 0) {
-            this.toggleSearch();
-        }
     }
 
 
@@ -88,7 +90,11 @@ class Home extends Component {
             }
         }
 
-        this.setState({ matchedCourses: matchedCourses, courseList: courseList});
+        console.log(matchedCourses);
+
+        this.setState({ matchedCourses: matchedCourses, courseList: courseList}, function() {
+            this.toggleActive('results');
+        });
     }
 
     toggleSearch() {
@@ -96,7 +102,6 @@ class Home extends Component {
     }
 
     search(query) {
-        this.toggleActive('results');
         this.filterSearch(query);
     }
 

@@ -22,7 +22,9 @@
 .courseCoordinator {
     display: inline-block;
     font-weight: bold;
-    font-size: large
+    font-size: large;
+    padding-top: 1em;
+    float: left;
 
 }
 
@@ -30,6 +32,8 @@
     display: inline-block;
     margin-left: 1em;
     font-size: large;
+    padding-top: 1em;
+    float: left;
 }
 
 .courseRating {
@@ -84,12 +88,18 @@
     padding: 15px;
 }
 
+.courseReviewAddSection > p {
+    color: black;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
 .courseReviewAddTitle {
-    width: 40%;
+    width: 50%;
 }
 
 .courseReviewAddRatingInputLabel {
-    margin-top: 15px;
+    margin-top: 1em;
 }
 
 .courseReviewAddRating {
@@ -101,7 +111,25 @@
 
 .courseReviewAddDescription {
     display: block;
-    margin-top: 15px;
+    margin-top: 1em;
     width: 50%;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .course-rating-holder {
+        width: calc(90% - 2em);
+    }
+
+    .courseAverageRatingSymbol {
+        margin-right: 1em;
+    }
+
+    .lineDivision {
+        margin-top: 6em;
+    }
+
+    .course-rating .popup-content {
+        width: 90% !important;
+    }
 }

@@ -1,61 +1,74 @@
-.login {
-    position: absolute;
-    width: 1440px;
-    height: 900px;
-    left: 0px;
-    top: 0px;
-    background: #FFF2C8;
+.ntu {
+    position: fixed;
+    height: 10%;
+    width: 16%;
+    top: 3%;
+    left: 3%;
 }
 
-.ntu {
-    position: absolute;
-    width: 199px;
-    height: 71px;
-    left: 116px;
-    top: 53px;
+.student {
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    height: 60%;
+    width: 65%;
 }
 
 .NTULearn {
-    position: absolute;
-    width: 542px;
-    height: 122px;
-    left: 116px;
-    top: 208px;
-
-    font-family: Gotham;
+    margin-top: 20%;
+    margin-left: 5%;
     font-style: normal;
-    font-weight: 300;
-    font-size: 96px;
-    line-height: 115px;
+    font-weight: 500;
+    font-size: 5em;
 
     color: #000000;
 }
 
-.box {
-    position: absolute;
-    width: 347px;
-    height: 56px;
-    left: 118px;
-    top: 698px;
+.welcome-description {
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 1.6em;
+    width: 30%;
+    color: black;
 }
 
 .studentLogin {
-    position: absolute;
     width: 130px;
     height: 40px;
-    left: 118px;
-    top: 698px;
+    margin-top: 5% !important;
+    margin-left: 5% !important;
 }
 
-.adminLogin {
-    position: absolute;
-    width: 130px;
-    height: 40px;
-    left: 160px;
-    top: 698px;
+@media only screen and (max-width: 600px) {
+    .ntu {
+        top: 1%;
+        width: 30%;
+        height: 10%;
+    }
 
-}
+    .NTULearn {
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        margin: 20% auto 0 auto;
+    }
 
-span {
-    font-family: Gotham;
+    .student {
+        height: 20%;
+    }
+
+    .welcome-description {
+        width: 80%;
+        text-align: center;
+        font-size: 1.6em;
+        margin: 8% auto 0 auto;
+    }
+
+    .studentLogin {
+        width: 90%;
+        position: fixed !important;
+        bottom: 25%;
+        left: 5%;
+        margin: 0 !important;
+    }
 }

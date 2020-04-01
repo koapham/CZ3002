@@ -1,5 +1,5 @@
 .input-holder {
-    width: 60% !important;
+    width: 60%;
     position: relative;
     text-align:center;
     margin: 10em auto 0 auto;
@@ -52,6 +52,7 @@
 
     #course-search {
         width: 90%;
+        text-align: right;
     }
 }
 

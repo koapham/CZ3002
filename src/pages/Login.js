@@ -22,7 +22,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div class="login" id="login" style={{background: '#FFF2c8' }}>
+            <div class="login" id="login" >
                 <div class="container">
                     <h2 id="titleLogin">ShowTime</h2>
                     <div class="card-login mx-auto mt-5 login-form">

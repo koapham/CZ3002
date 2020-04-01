@@ -164,7 +164,6 @@ class CourseRating extends Component {
                 <HomePlaceholder className={ "home-placeholder center" }  />
                 <div className={"course-rating-holder"}>
                     <div className="courseTitle">{this.state.courseTitle}</div>
-                    <a href="#" className="courseContent">Content</a>
                     <div className="courseCoord">
                         <div className="courseCoordinator">Course Coordinator</div>
                         <div className="courseCoordinatorContent">{this.state.courseCoordinator}</div>
@@ -176,39 +175,43 @@ class CourseRating extends Component {
                                    {
                                        <div className="courseReviewAdd">Add Rating</div>
                                    } modal closeOnDocumentClick>
-                            <div className="courseReviewAddSection">
-                                <TextField required className="courseReviewAddTitle" label="Title" value={this.state.addTitle} defaultValue="Title" onChange={this.handleChangeAddTitle} />
-                                <div className="courseReviewAddRating">
-                                    <InputLabel id="addRatingInputLabel" className="courseReviewAddRatingInputLabel">Rating</InputLabel>
-                                    <Select
-                                        labelId="addRatingInputLabel"
-                                        className="courseReviewAddRatingContent"
-                                        value={this.state.addRating}
-                                        onChange={this.handleChangeAddRating}
-                                    >
-                                        <MenuItem value=""></MenuItem>
-                                        <MenuItem value={1}>1</MenuItem>
-                                        <MenuItem value={2}>2</MenuItem>
-                                        <MenuItem value={3}>3</MenuItem>
-                                        <MenuItem value={4}>4</MenuItem>
-                                        <MenuItem value={5}>5</MenuItem>
-                                        <MenuItem value={6}>6</MenuItem>
-                                        <MenuItem value={7}>7</MenuItem>
-                                        <MenuItem value={8}>8</MenuItem>
-                                        <MenuItem value={9}>9</MenuItem>
-                                        <MenuItem value={10}>10</MenuItem>
-                                    </Select>
+                            {close => (
+                                <div className="courseReviewAddSection">
+                                    <p>Add Rating</p>
+                                    <TextField required className="courseReviewAddTitle" label="Title" value={this.state.addTitle} defaultValue="Title" onChange={this.handleChangeAddTitle} />
+                                    <div className="courseReviewAddRating">
+                                        <InputLabel id="addRatingInputLabel" className="courseReviewAddRatingInputLabel">Rating</InputLabel>
+                                        <Select
+                                            labelId="addRatingInputLabel"
+                                            className="courseReviewAddRatingContent"
+                                            value={this.state.addRating}
+                                            onChange={this.handleChangeAddRating}
+                                        >
+                                            <MenuItem value={1}>1</MenuItem>
+                                            <MenuItem value={2}>2</MenuItem>
+                                            <MenuItem value={3}>3</MenuItem>
+                                            <MenuItem value={4}>4</MenuItem>
+                                            <MenuItem value={5}>5</MenuItem>
+                                            <MenuItem value={6}>6</MenuItem>
+                                            <MenuItem value={7}>7</MenuItem>
+                                            <MenuItem value={8}>8</MenuItem>
+                                            <MenuItem value={9}>9</MenuItem>
+                                            <MenuItem value={10}>10</MenuItem>
+                                        </Select>
+                                    </div>
+                                    <TextField
+                                        className="courseReviewAddDescription"
+                                        label="Description"
+                                        multiline
+                                        rowsMax="6"
+                                        value={this.state.addDescription}
+                                        onChange={this.handleChangeAddDescription}
+                                    />
+                                    <SubmitButton className="courseReviewAddSubmitButton" variant="contained" onClick={() => {this.handleSubmitButton();close();}}>Submit</SubmitButton>
                                 </div>
-                                <TextField
-                                    className="courseReviewAddDescription"
-                                    label="Description"
-                                    multiline
-                                    rowsMax="6"
-                                    value={this.state.addDescription}
-                                    onChange={this.handleChangeAddDescription}
-                                />
-                                <SubmitButton className="courseReviewAddSubmitButton" variant="contained" onChange={this.handleSubmitButton}>Submit</SubmitButton>
-                            </div>
+                            )
+                            }
+
                         </Popup>
                     </div>
 
@@ -217,6 +220,7 @@ class CourseRating extends Component {
                         {
                             this.state.courseRatings.map(review =>
                             <CourseReviewCard
+                                title={review.title}
                                 description={review.description}
                                 date={review.timeStamp}
                                 like={review.likes}

@@ -33,16 +33,17 @@ class CourseReviewCard extends Component {
             <Popup trigger=
                        {
                            <div className="course-review-card-section">
-                               <SearchIcon className="course-review-card-profile-picture" />
-                               {/*<img className={"course-review-card-profile-picture"} src="home-icon.svg"  alt="Profile Picture" />*/}
-                               <p className="course-review-card-review">{this.props.description}</p>
-                               <p className="course-review-card-date">{this.props.date}</p>
-                               <Heart className="course-review-card-like-symbol" />
-                               {/*<img className="course-review-card-like-symbol" src="home-icon.svg" alt="Like Symbol" />*/}
-                               <p className="course-review-card-like-number">{this.props.like}</p>
-                               <p className="course-review-card-rating-number">{this.props.rating}</p>
-                               {/*<img className="course-review-card-rating-symbol" src="home-icon.svg" alt="Rating Symbol" />*/}
-                               <Star className="course-review-card-rating-symbol" />
+                               <div className={"card-title-holder"}>
+                                   <p className="course-review-card-title">{this.props.title}</p>
+                                   <p className="course-review-card-review">{this.props.description}</p>
+                               </div>
+                               <div className={"card-review-holder"}>
+                                   <p className="course-review-card-date">{this.props.date}</p>
+                                   <Heart className="course-review-card-like-symbol" />
+                                   <p className="course-review-card-like-number">{this.props.like}</p>
+                                   <p className="course-review-card-rating-number">{this.props.rating}</p>
+                                   <Star className="course-review-card-rating-symbol" />
+                               </div>
                            </div>
                        } modal closeOnDocumentClick>
                 <div className="course-review-card-detail">
@@ -54,8 +55,8 @@ class CourseReviewCard extends Component {
                             {this.state.like ? <HeartFilled className="course-review-card-detail-like-symbol"/> : <Heart className="course-review-card-detail-like-symbol" />}
                     </div>
                     </div>
-                    <div className="course-review-card-detail-date">{this.props.date}</div>
-                    <div className="course-review-card-detail-description">{this.props.description}</div>
+                    <p className="course-review-card-detail-description">{this.props.description}</p>
+                    <p className="course-review-card-detail-date">{this.props.date}</p>
                 </div>
             </Popup>
         )
